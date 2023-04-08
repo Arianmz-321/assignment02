@@ -1,10 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Chat Server</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css"/>
+    <script src="js/main.js"></script>
 </head>
 <body>
+    <section>
+        <h1>Chat Server</h1>
+    </section>
 
+    <section>
+        <lhs>
+            <button id="about" onclick="goToHome()">Home</button>
+            <h3>List of chat rooms</h3>
+            <button id="btRoom" onclick="enterRoom()">Create and join new room</button>
+        </lhs>
+
+        <rhs>
+            <p>Chat Server, created by the Ontario Tech Software Dev Corporation</p>
+            <h2>Our Team</h2>
+            <p>This easy-to-use chat server was brought to you by:</p>
+            <ul>
+                <li>name1</li>
+                <li>name2</li>
+                <li>name3</li>
+            </ul>
+        </rhs>
+    </section>
+
+    <script>
+        function goToHome() {
+            location.replace("file:///C:/Users/Matthew/Desktop/MatthewWongFiles/wongm/CSCI2020U/Assignments/csci2020u-assignment02-template/src/main/webapp/index.html")
+        }
+    </script>
 </body>
 </html>
