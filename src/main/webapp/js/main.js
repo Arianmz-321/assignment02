@@ -19,10 +19,10 @@ function generatingRandomUpperAlphanumericString(number) {
 
 function enterRoom(){
 
-    //let code = document.getElementById("room-code").value;
+    let code = document.getElementById("room-code").value;
     //console.log(code);
 
-
+    /*
     if (document.getElementById("room-code").value == "") {
 
         // refresh the list of rooms
@@ -32,6 +32,8 @@ function enterRoom(){
         let code = document.getElementById("room-code").value;
         console.log(code);
     }
+
+     */
 
     // create the web socket
     ws = new WebSocket("ws://localhost:8080/WSChatServer-1.0-SNAPSHOT/ws/"+code);
