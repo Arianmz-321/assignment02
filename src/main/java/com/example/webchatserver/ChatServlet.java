@@ -4,9 +4,11 @@ import java.io.*;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.json.JSONObject;
 
 /**
  * This is a class that has services
@@ -14,6 +16,10 @@ import org.apache.commons.lang3.RandomStringUtils;
 @WebServlet(name = "chatServlet", value = "/chat-servlet")
 public class ChatServlet extends HttpServlet {
     private String message;
+
+    public void init() {
+        message = "Hello world";
+    }
 
     //static so this set is unique
     public static Set<String> rooms = new HashSet<>();
@@ -40,6 +46,13 @@ public class ChatServlet extends HttpServlet {
         // send the random code as the response's content
         PrintWriter out = response.getWriter();
         out.println(generatingRandomUpperAlphanumericString(5));
+
+        //JSONObject data = new JSONObject(jsonData);
+
+        // Hello
+        out.println("<html><body>");
+        out.println("<h1>" + message + "</h1>");
+        out.println("</body></html>");
 
     }
 
