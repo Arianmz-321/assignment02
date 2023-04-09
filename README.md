@@ -1,4 +1,4 @@
-Project information: This project is a Java-based chat room application that works in realtime.
+#H1 Project information: This project is a Java-based chat room application that works in realtime.
     - allows users to join chat rooms
     - send and receive messages
 
