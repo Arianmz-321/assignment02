@@ -2,7 +2,7 @@ let ws;
 
 function newRoom(){
     // calling the ChatServlet to retrieve a new room ID
-    let callURL= "http://localhost:8080/WSChatServer-1.0-SNAPSHOT/chat-servlet";
+    let callURL= "http://localhost:8080/WSChatServer-1.0-SNAPSHOT/chatservlet";
     fetch(callURL, {
         method: 'GET',
         headers: {
@@ -11,6 +11,7 @@ function newRoom(){
     })
         .then(response => response.text())
         .then(response => enterRoom(response)); // enter the room with the code
+        System.out.println("Room ID from newRoom():" + generatingRandomUpperAlphanumericString(5))
 }
 
 function generatingRandomUpperAlphanumericString(number) {
@@ -20,6 +21,12 @@ function generatingRandomUpperAlphanumericString(number) {
 function enterRoom(){
 
     let code = document.getElementById("room-code").value;
+    let oldHTML = document.getElementById("roomlist").innerHTML;
+    document.getElementById("roomlist").innerHTML = oldHTML+ "<tr>" + "<td>" + code + "<br>" + "</td>"+ "</tr>";
+
+    let oldHTML1 = document.getElementById("roomnum").innerHTML;
+    document.getElementById("roomnum").innerHTML = oldHTML1 + "<td>" + code + "</td>";
+
     //console.log(code);
 
     /*
