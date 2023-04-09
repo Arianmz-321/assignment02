@@ -23,7 +23,7 @@ public class ChatServlet extends HttpServlet {
 
     //static so this set is unique
     public static Set<String> rooms = new HashSet<>();
-
+    public static List<ChatRoom> chatRooms = new ArrayList<>();
 
 
     /**
@@ -36,7 +36,8 @@ public class ChatServlet extends HttpServlet {
             generatedString = RandomStringUtils.randomAlphanumeric(length).toUpperCase();
         }
         rooms.add(generatedString);
-
+        ChatRoom chatRoom = new ChatRoom(generatedString, "");
+        chatRooms.add(chatRoom);
         return generatedString;
     }
 
