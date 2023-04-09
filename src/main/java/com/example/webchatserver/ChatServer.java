@@ -7,13 +7,11 @@ import jakarta.websocket.server.ServerEndpoint;
 import org.json.JSONObject;
 
 import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-//import static com.example.util.ResourceAPI.loadChatRoomHistory;
-//import static com.example.util.ResourceAPI.saveChatRoomHistory;
+import static com.example.util.ResourceAPI.loadChatRoomHistory;
+import static com.example.util.ResourceAPI.saveChatRoomHistory;
 
 
 /**
@@ -35,7 +33,7 @@ public class ChatServer {
     public void open(@PathParam("roomID") String roomID, Session session) throws IOException, EncodeException {
 
         session.getBasicRemote().sendText("Join a room to start playing/chatting.");
-        session.getBasicRemote().sendText("Alphanumeric code:" + roomID);
+        session.getBasicRemote().sendText("Alphanumeric code:" + roomID); //test
 //        accessing the roomID parameter
         System.out.println(roomID);
 
@@ -58,6 +56,7 @@ public class ChatServer {
 
     }
 
+    /*
     public static void saveChatRoomHistory(String roomID, String log) throws IOException {
         //String uriAPI = "http://localhost:8080/ChatResourceAPI-1.0-SNAPSHOT/api/history/"+roomID;
         String uriAPI = "http://localhost:8080/WSChatServer-1.0-SNAPSHOT/api/history/"+roomID;
@@ -131,6 +130,8 @@ public class ChatServer {
 
     }
 
+     */
+
     @OnClose
     public void close(Session session) throws IOException, EncodeException {
         String userId = session.getId();
@@ -168,14 +169,15 @@ public class ChatServer {
 //        example getting unique userID that sent this message
         String userId = session.getId();
         String roomID = roomList.get(userID); // my room
-        JSONObject jsonmsg = new JSONObject(comm);
-        String type = (String) jsonmsg.get("type");
-        String message = (String) jsonmsg.get("msg");
 
 //        Example conversion of json messages from the client
         //        JSONObject jsonmsg = new JSONObject(comm);
 //        String val1 = (String) jsonmsg.get("attribute1");
 //        String val2 = (String) jsonmsg.get("attribute2");
+
+        JSONObject jsonmsg = new JSONObject(comm);
+        String type = (String) jsonmsg.get("type");
+        String message = (String) jsonmsg.get("msg");
 
         // handle the messages
         if(usernames.containsKey(userID)){ // not their first message
