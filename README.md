@@ -17,8 +17,14 @@
     - Open the folder in an IDE
     - Build the project
     - Access the application: Open your web browser and navigate to the application URL of http://localhost:8080/chat-room.html
-    - Use the chatroom by creating a room and chatting
+    - Use the chatroom by creating a room and chatting (see screenshots for output)
+        - User 1 clicks "Create and join new room" and the program prompts the user to enter a username
+        - After typing in a username, User 1 can now type a message
+        - User 2 clicks "Create and join new room" and the program prompts the user to enter a username
+        - After typing in a username, User 2 can now type a message
+        - User 1 can reply to user 2 by clicking "Create and join new room" and entering their username again, and typing in a message
+        - User 2 can reply to user 1 by clicking "Create and join new room" and entering their username again, and typing in a message
 
 
 # Other resources
-    any references to other materials/libraries that you might have used on your assignment.
+    - We didn't use any other resources
