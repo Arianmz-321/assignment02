@@ -27,4 +27,9 @@
 
 
 # Other resources
-    - We didn't use any other resources
+    We didn't use any other resources.
+
+
+# Other notes
+    - We noticed that the messages appear multiple times. However, we haven't found a way to fix this yet.
+    - We noticed that the room number doesn't appear on the left and top of the HTML page (the function to generate the room number is in ChatServlet.java). We haven't found a way to fix this yet.
