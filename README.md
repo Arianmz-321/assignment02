@@ -1,13 +1,14 @@
 # Project information: 
-    This project is a Java-based chat room application that works in realtime.
+    This project is a Java-based chat room application that works in real time.
     - allows users to join chat rooms
     - send and receive messages
 
 
 # Improvements: 
     - Improved front end development for a more streamlined user interface
-briefly describe the improvements you made to the interface and/or the
-interaction functionalities (if any).
+        - Changed the colour of the Chat Server title
+        - Moved the "About" button so that the buttons are on the left side of the page
+
 
 # How to run: 
     - Install Java Development Kit (JDK): Download and install the appropriate JDK version for your operating system
@@ -16,7 +17,7 @@ interaction functionalities (if any).
     - Open the folder in an IDE
     - Build the project
     - Access the application: Open your web browser and navigate to the application URL of http://localhost:8080/chat-room.html
-    -Use the chatroom by creating one and chatting
+    - Use the chatroom by creating a room and chatting
 
 
 # Other resources
