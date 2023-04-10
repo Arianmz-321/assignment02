@@ -14,9 +14,9 @@ function newRoom(){
         System.out.println("Room ID from newRoom():" + generatingRandomUpperAlphanumericString(5))
 }
 
-function generatingRandomUpperAlphanumericString(number) {
+//function generatingRandomUpperAlphanumericString(number) {
     
-}
+//}
 
 function enterRoom(){
 
@@ -55,6 +55,8 @@ function enterRoom(){
         // handle message
 
         }
+
+    System.out.println("Room ID from newRoom():" + generatingRandomUpperAlphanumericString(5))
 }
 
 document.getElementById("input").addEventListener("keyup", function (event) {

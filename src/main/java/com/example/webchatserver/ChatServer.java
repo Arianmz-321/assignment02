@@ -70,7 +70,6 @@ public class ChatServer {
         JSONObject jsonText = new JSONObject(message);
         String TypeMsg = jsonText.getString("type");
 
-        
         switch (TypeMsg) {
 
             case "join":
