@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import jakarta.websocket.Session;
+
 /**
  * This class represents the data you may need to store about a Chat room
  * You may add more method or attributes as needed
@@ -72,6 +74,7 @@ public class ChatRoom {
     public Map<String, String> getUsers() {
         return users;
     }
+
 
     public static void add(ChatRoom chatRoom) {
         rooms.add(chatRoom);    
