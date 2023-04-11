@@ -3,6 +3,8 @@ package com.example.webchatserver;
 import java.io.*;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.List;
+import java.util.ArrayList;
 
 import com.fasterxml.jackson.annotation.JsonAnyGetter;
 import jakarta.servlet.http.*;
@@ -17,13 +19,9 @@ import org.json.JSONObject;
 public class ChatServlet extends HttpServlet {
     private String message;
 
-    public void init() {
-        message = "Hello world";
-    }
-
-    //static so this set is unique
+    //static so this set is uniques
     public static Set<String> rooms = new HashSet<>();
-    public static List<ChatRoom> chatRooms = new ArrayList<>();
+
 
 
     /**
@@ -36,8 +34,7 @@ public class ChatServlet extends HttpServlet {
             generatedString = RandomStringUtils.randomAlphanumeric(length).toUpperCase();
         }
         rooms.add(generatedString);
-        ChatRoom chatRoom = new ChatRoom(generatedString, "");
-        chatRooms.add(chatRoom);
+
         return generatedString;
     }
 
@@ -47,13 +44,6 @@ public class ChatServlet extends HttpServlet {
         // send the random code as the response's content
         PrintWriter out = response.getWriter();
         out.println(generatingRandomUpperAlphanumericString(5));
-
-        //JSONObject data = new JSONObject(jsonData);
-
-        // Hello
-        out.println("<html><body>");
-        out.println("<h1>" + message + "</h1>");
-        out.println("</body></html>");
 
     }
 
